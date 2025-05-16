@@ -89,24 +89,23 @@ if ($msg == 'updated') {
                 <th>Nama</th>
                 <th>Telpon</th>
                 <th>Alamat</th>
-                <th>Deskripsi</th>
                 <th style="width: 10%;">Operasi</th>
               </tr>
             </thead>
             <tbody>
               <?php
               $no = 1;
-              $supplier = getData("SELECT * FROM tbl_customer");
-              foreach ($supplier as $s): ?>
+              $customer = getData("SELECT * FROM tbl_customer");
+              foreach ($customer as $s): ?>
                 <tr>
                   <td><?= $no++ ?></td>
                   <td><?= $s['nama'] ?></td>
                   <td><?= $s['telp'] ?></td>
                   <td><?= $s['alamat'] ?></td>
                   <td>
-                    <a href="edit-supplier.php?id=<?= $s['id_customer'] ?>" class="btn btn-sm btn-warning"><i
+                    <a href="edit-customer.php?id=<?= $s['id_customer'] ?>" class="btn btn-sm btn-warning"><i
                         class="far fa-edit"></i></a>
-                    <a href="del-supplier.php?id=<?= $s['id_customer'] ?>"
+                    <a href="del-customer.php?id=<?= $s['id_customer'] ?>"
                       class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin akan menghapus customer ini?')"><i class="fas fa-trash"></i></a>
                   </td>
                 </tr>
